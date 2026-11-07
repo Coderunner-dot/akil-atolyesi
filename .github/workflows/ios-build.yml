@@ -1,0 +1,45 @@
+name: iOS Build
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - name: Kodu indir
+        uses: actions/checkout@v4
+
+      - name: XcodeGen kur
+        run: brew install xcodegen
+
+      - name: Xcode projesini üret
+        run: xcodegen generate
+
+      - name: Derle (imzasız)
+        run: |
+          xcodebuild \
+            -project AkilAtolyesi.xcodeproj \
+            -scheme AkilAtolyesi \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -configuration Release \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            build
+
+      - name: .ipa oluştur
+        run: |
+          mkdir -p Payload
+          cp -R build/Build/Products/Release-iphoneos/AkilAtolyesi.app Payload/
+          zip -qry AkilAtolyesi.ipa Payload
+
+      - name: .ipa dosyasını yükle
+        uses: actions/upload-artifact@v4
+        with:
+          name: AkilAtolyesi-ipa
+          path: AkilAtolyesi.ipa

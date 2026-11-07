@@ -1,0 +1,32 @@
+name: AkilAtolyesi
+options:
+  bundleIdPrefix: com.akilatolyesi
+  deploymentTarget:
+    iOS: "17.0"
+targets:
+  AkilAtolyesi:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - AkilAtolyesi
+    info:
+      path: AkilAtolyesi/Info.plist
+      properties:
+        CFBundleDisplayName: "Akıl Atölyesi"
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIFileSharingEnabled: true
+        LSSupportsOpeningDocumentsInPlace: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.akilatolyesi.app
+        PRODUCT_NAME: AkilAtolyesi
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.0"
+        GENERATE_INFOPLIST_FILE: NO
+        DEVELOPMENT_TEAM: ""
+    scheme: {}
