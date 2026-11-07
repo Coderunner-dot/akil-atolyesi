@@ -20,3 +20,11 @@ Farkındalık ve doğru soru sorma becerisini geliştiren kişisel bir iOS uygul
 
 ## Kural
 Her değişiklikten sonra GitHub Actions derlemesinin başarılı olduğunu kontrol et.
+
+## Durum (2026-11-07)
+- Aşama 1 ("Merhaba" deneme uygulaması) tamamlandı. GitHub Actions derlemesi ilk denemede başarılı oldu (run 42383357005).
+- Depo: https://github.com/Coderunner-dot/akil-atolyesi (herkese açık, dal `main`).
+- İndirilen .ipa: `C:\Projeler\ipa\AkilAtolyesi.ipa` (içeriği doğrulandı: `Payload/AkilAtolyesi.app`).
+- GitHub hesabı: `Coderunner-dot`. Eski adı `sadettinozsevgic688-wq` idi, ikisi aynı hesap (id 308981735). `gh` içinde iki kayıt görünüyor; etkin olan `Coderunner-dot` olmalı.
+- **Sıradaki adım:** Kullanıcının iPhone kablosu yolda. Kablo gelince .ipa Sideloadly ile iPhone 11'e yüklenecek: cihaza güven → Sideloadly'ye .ipa'yı sürükle, Apple ID gir, Start → iPhone'da Ayarlar > Genel > VPN ve Cihaz Yönetimi'nden geliştiriciye güven → gerekirse Gizlilik ve Güvenlik > Geliştirici Modu'nu aç.
+- Yükleme çalışınca asıl uygulamanın özellikleri planlanacak.
